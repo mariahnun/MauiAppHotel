@@ -7,7 +7,7 @@
 
     <ContentPage.Resources>
         <Style TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#2F4F4F" />
+            <Setter Property="BackgroundColor" Value="#007474" />
         </Style>
     </ContentPage.Resources>
 
@@ -15,7 +15,7 @@
                          Padding="10"
                          Spacing="10">
 
-        <Label Text="Desenvolvedor"
+        <Label Text="Sobre"
                FontFamily="Kalam"
                FontSize="50"
                TextColor="{StaticResource Primary}" />
@@ -24,22 +24,50 @@
             <VerticalStackLayout>
                 
                 <Frame Padding="10" Margin="10">
+                    
                     <VerticalStackLayout>
 
-                        <Label Text="Maria 2026"
+                        <Label Text="Desenvolvedor em aprendizagem"
+                               FontFamily="Kalam"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                               TextColor="#000000"/>
 
                         
                     </VerticalStackLayout>
                 </Frame>
 
-                
-                <Button Text="Voltar"  />
+                <Frame Padding="10" Margin="10">
+
+                <VerticalStackLayout>
+
+                <Label Text="Maria 2026"
+               TextTransform="Uppercase"
+               FontSize="Subtitle"
+               TextColor="#000000"/>
+
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10" Margin="10">
+
+                    <VerticalStackLayout>
+
+                        <Label Text="maria.nunes01@aluno.cps.sp.gov.br"
+                        FontSize="Subtitle"
+                        TextColor="#000000"/>
+
+
+                    </VerticalStackLayout>
+                </Frame>
+
 
             </VerticalStackLayout>
         </Frame>
 
+        <Button Text="Voltar" Clicked="Button_Clicked"  />
+
     </VerticalStackLayout>
+    
 </ContentPage>

@@ -10,7 +10,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate views:HospedagemContratada}"
+        ContentTemplate="{DataTemplate views:ContratacaoHospedagem}"
         Route="MainPage" />
 
 </Shell>

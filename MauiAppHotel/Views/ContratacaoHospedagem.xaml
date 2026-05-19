@@ -7,7 +7,7 @@
 
     <ContentPage.Resources>
         <Style TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#2F4F4F" />
+            <Setter Property="BackgroundColor" Value="#007474" />
         </Style>
     </ContentPage.Resources>
     
@@ -15,44 +15,14 @@
                          Padding="10"
                          Spacing="10">
 
-        <Label Text="Cálculo da Diária"
-               FontFamily="Kalam"
+        <Label Text="Reserva"
                FontSize="50"
-               TextColor="{StaticResource Primary}" />
+               FontFamily="Kalam"
+               TextColor="#fdf5e6" />
 
         <Frame Padding="10">
             <VerticalStackLayout>
-                <Grid RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="*, *, 2*">
-
-                    <Label Grid.Row="0" Grid.Column="0"
-                           Text="Adultos:" />
-
-                    <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_adultos}"/>
-
-                    <Stepper Grid.Row="0" Grid.Column="2"
-                             x:Name="stp_adultos"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
-
-                    <Label Grid.Row="1" Grid.Column="0"
-                           Text="Crianças:" />
-
-                    <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_criancas}"/>
-
-                    <Stepper Grid.Row="1" Grid.Column="2"
-                             x:Name="stp_criancas"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
-                </Grid>
+                
 
                 <Frame Padding="10" Margin="10">
                     <VerticalStackLayout>
@@ -60,7 +30,7 @@
                         <Label Text="Escolha sua Suíte"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                               TextColor="#000000"/>
 
                         <Picker x:Name="pck_quarto"
                                 Title="Selecione sua Acomodação" />
@@ -74,7 +44,7 @@
                         <Label Text="Período da Estadia"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                               TextColor="#000000"/>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" />
@@ -90,10 +60,11 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar"  />
-
+                
             </VerticalStackLayout>
         </Frame>
+
+        <Button Text="Avançar" Clicked="Button_Clicked_1"/>
 
     </VerticalStackLayout>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MauiAppHotel.Views;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MauiAppHotel
 {
@@ -7,6 +8,10 @@ namespace MauiAppHotel
         public App()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute(nameof(HospedagemContratada), typeof(HospedagemContratada));
+            Routing.RegisterRoute(nameof(ContratacaoHospedagem), typeof(ContratacaoHospedagem));
+            Routing.RegisterRoute(nameof(Sobre), typeof(Sobre));
 
         }
 

@@ -3,10 +3,96 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.HospedagemContratada"
              Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#007474" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10">
+
+        <Label Text="Estadia"
+               FontFamily="Kalam"
+               FontSize="40"
+               TextColor="#fdf5e6" />
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:" />
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="{StaticResource Primary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="5"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:" />
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="{StaticResource Primary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="5"
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1" />
+                </Grid>
+
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="#000000"/>
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua Acomodação" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label Text="Período da Estadia"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="#000000"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:" />
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:" />
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Avançar" Clicked="Button_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>
