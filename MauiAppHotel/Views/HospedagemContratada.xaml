@@ -66,16 +66,9 @@
                                TextColor="#000000"/>
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação"
-                                ItemDisplayBinding="{Binding Descricao}"/>
-                        <Picker.Items>
-                            <x:String>Quarto Solteiro</x:String>
-                            <x:String>Quarto Casal</x:String>
-                            <x:String>Suíte Luxo</x:String>
-                            <x:String>Suíte super Luxo</x:String>
-                        </Picker.Items>
-
-
+                            Title="Selecione sua Acomodação"
+                            ItemDisplayBinding="{Binding Descricao}">
+                        </Picker>
                     </VerticalStackLayout>
                 </Frame>
 
@@ -102,19 +95,37 @@
 
                     </VerticalStackLayout>
                 </Frame>
-                <Frame Margin="2">
-                    <HorizontalStackLayout>
-                        <Label Text="Valor Total:" />
-                        <Label Text="R$ 750,00" />
-                    </HorizontalStackLayout>
+                <Frame Margin="1">
+                    <VerticalStackLayout>
+                        
+                       
+                        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Valor diária crianças:" />
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Source={x:Reference pck_quarto}, Path=SelectedItem.ValorDiariaCrianca, StringFormat='R${0}'}" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="Valor diária adultos:" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Source={x:Reference pck_quarto}, Path=SelectedItem.ValorDiariaAdulto, StringFormat='R${0}'}" />
+
+                        </Grid>
+                    </VerticalStackLayout>
                 </Frame>
 
             </VerticalStackLayout>
         </Frame>
+        
+        
 
-        <Button Text="Avançar" 
-                HorizontalOptions="Center"
-                Clicked="Button_Clicked"/>
+        <Grid RowDefinitions="Auto, Auto"
+      ColumnDefinitions="*, *">
+
+            <Button Text="Voltar" 
+            HorizontalOptions="Center"
+            Clicked="Button_Clicked_2" Grid.Row="0" Grid.Column="0"/>
+
+            <Button Text="Avançar" 
+        HorizontalOptions="Center"
+        Clicked="Button_Clicked" Grid.Row="0" Grid.Column="1"/>
+        </Grid>
 
     </VerticalStackLayout>
 </ContentPage>

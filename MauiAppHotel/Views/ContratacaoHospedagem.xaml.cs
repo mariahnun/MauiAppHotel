@@ -1,6 +1,3 @@
-using Java.Sql;
-using Kotlin;
-
 namespace MauiAppHotel.Views;
 
 public partial class ContratacaoHospedagem : ContentPage
@@ -11,15 +8,16 @@ public partial class ContratacaoHospedagem : ContentPage
 	public ContratacaoHospedagem()
 	{
 		InitializeComponent();
+
         PropriedadesApp = (App)Application.Current;
 
         pck_quarto.ItemsSource = PropriedadesApp.lista_quartos;
 
         dtpck_checkin.MinimumDate = DateTime.Now;
-        dtpck_checkin.MaximumDate = new DateTime.(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day);
+        dtpck_checkin.MaximumDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day);
 
-        dtpck_checkout.MinimumDate = dtpck_checkin.Date.AddDays(1);
-        dtpck_checkout.MaximumDate = dtpck_checkin.Date.AddMonths(6);
+        dtpck_checkout.MinimumDate = dtpck_checkin.Date.Value.AddDays(1);
+        dtpck_checkout.MaximumDate = dtpck_checkin.Date.Value.AddMonths(6);
 
     }
 
@@ -33,7 +31,7 @@ public partial class ContratacaoHospedagem : ContentPage
     {
         DatePicker elemento = sender as DatePicker;
 
-        DateTime data_selecionada_checkin = elemento.Date;
+        DateTime data_selecionada_checkin = elemento.Date.Value;
         dtpck_checkout.MinimumDate = data_selecionada_checkin.AddDays(1);
         dtpck_checkout.MaximumDate = data_selecionada_checkin.AddMonths(6);
     }

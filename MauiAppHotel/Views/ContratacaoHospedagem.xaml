@@ -26,10 +26,12 @@
                 HorizontalTextAlignment="Center"/>
 
         <Frame Padding="10">
+            
             <VerticalStackLayout>
                 
 
                 <Frame Padding="10" Margin="10">
+                    
                     <VerticalStackLayout>
 
                         <Label Text="Escolha sua Suíte"
@@ -38,15 +40,10 @@
                                TextColor="#000000"/>
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação">
-                            <Picker.Items>
-                                <x:String>Quarto Solteiro</x:String>
-                                <x:String>Quarto Casal</x:String>
-                                <x:String>Suíte Luxo</x:String>
-                                <x:String>Suíte super luxo</x:String>
-                            </Picker.Items>
+                                Title="Selecione sua Acomodação"
+                                ItemDisplayBinding="{Binding Descricao}">
                         </Picker>
-                    </VerticalStackLayout>
+                    </VerticalStackLayout>   
                 </Frame>
 
                 <Frame Padding="10"
@@ -100,4 +97,5 @@
                 Clicked="Button_Clicked_1"/>
 
     </VerticalStackLayout>
+    
 </ContentPage>

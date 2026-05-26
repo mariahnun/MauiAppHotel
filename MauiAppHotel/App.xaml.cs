@@ -1,7 +1,5 @@
-﻿using Android.Security.Identity;
-using MauiAppHotel.Models;
+﻿using MauiAppHotel.Models;
 using MauiAppHotel.Views;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace MauiAppHotel
 {
@@ -15,18 +13,21 @@ namespace MauiAppHotel
                 ValorDiariaAdulto = 110.0,
                 ValorDiariaCrianca =55.0
             },
+
             new Quarto()
             {
                 Descricao = "Suíte Luxo",
                 ValorDiariaAdulto = 80.0,
                 ValorDiariaCrianca =40.0
             },
+
             new Quarto()
             {
                 Descricao = "Suíte Single",
                 ValorDiariaAdulto = 50.0,
                 ValorDiariaCrianca =25.0
             },
+
             new Quarto()
             {
                 Descricao = "Suíte Básico",
