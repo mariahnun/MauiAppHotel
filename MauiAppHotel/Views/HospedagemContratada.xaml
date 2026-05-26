@@ -57,7 +57,7 @@
                              Increment="1" />
                 </Grid>
 
-                <Frame Padding="10" Margin="10">
+                <Frame Padding="10" Margin="5">
                     <VerticalStackLayout>
 
                         <Label Text="Escolha sua Suíte"
@@ -73,8 +73,8 @@
                 </Frame>
 
                 <Frame Padding="10"
-                       Margin="5">
-                    <VerticalStackLayout Spacing="5">
+                       Margin="2">
+                    <VerticalStackLayout Spacing="2">
 
                         <Label Text="Período da Estadia"
                                TextTransform="Uppercase"
@@ -97,8 +97,7 @@
                 </Frame>
                 <Frame Margin="1">
                     <VerticalStackLayout>
-                        
-                       
+
                         <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
                             <Label Grid.Row="0" Grid.Column="0" Text="Valor diária crianças:" />
                             <Label Grid.Row="1" Grid.Column="0" Text="{Binding Source={x:Reference pck_quarto}, Path=SelectedItem.ValorDiariaCrianca, StringFormat='R${0}'}" />
